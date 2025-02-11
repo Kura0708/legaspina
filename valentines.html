@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+            border: 2px solid red;
+            position: absolute;
+        }
+        .gif-container {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function moveNoButton() {
+            let btn = document.getElementById("noBtn");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        }
+        function showGif() {
+            document.getElementById("gifContainer").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>Will You Be My Valentine? ❤️</h1>
+    <div class="buttons">
+        <button class="btn yes" onclick="showGif()">Yes</button>
+        <button id="noBtn" class="btn no" onmouseover="moveNoButton()">No</button>
+    </div>
+    <div id="gifContainer" class="gif-container">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXR1NzJkdWltZ2VtcTBqbm5yY2duMmU0ZjRvYzNoNmZvMWFvZTl3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4pTdcifPZLpDjL1e/giphy.gif" alt="Love GIF">
+    </div>
+</body>
+</html>
